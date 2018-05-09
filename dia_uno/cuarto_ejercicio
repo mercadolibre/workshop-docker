@@ -1,0 +1,27 @@
+# ------------------------------------------
+# Levantar container con puerto configurado
+# ------------------------------------------
+
+docker container run -ti -p 8080:80 \
+    debian bash
+
+# -------------------------------------------
+# Levantar otro container con nginx-workshop
+# -------------------------------------------
+
+docker container run -ti -p 8080:80 \
+    mercadolibre/nginx-workshop bash
+
+# -------------------------------------------
+# Dentro del container
+# -------------------------------------------
+
+#Levantar nginx
+nginx
+
+# ----------------------------------
+# Desde tu maquina
+# ----------------------------------
+
+curl localhost:80 o abrir con browser
+

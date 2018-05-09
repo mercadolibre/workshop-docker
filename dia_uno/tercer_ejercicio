@@ -1,0 +1,30 @@
+# ----------------------------------
+# Levantar container con Debian
+# ----------------------------------
+
+docker container run -ti debian bash
+
+# ----------------------------------
+# Dentro del container
+# ----------------------------------
+
+apt-get update && apt-get upgrade -y
+
+# Instalar Nginx [https://www.nginx.com/]
+apt-get install nginx
+
+# Levantar Nginx
+nginx
+
+# Instalar curl
+apt-get install -y curl
+
+# Validar que nginx esta funcionando
+curl localhost:80
+
+# ----------------------------------
+# Desde tu maquina
+# ----------------------------------
+
+curl localhost:80 o abrir con browser
+

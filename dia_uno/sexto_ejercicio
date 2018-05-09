@@ -1,0 +1,49 @@
+# -------------------------------------------
+# Levantar container con memoria limitada
+# -------------------------------------------
+
+docker container run -ti -m 64m \
+    --name memory \
+    ubuntu dd bs=250M if=/dev/zero of=/dev/null
+
+# ---------------------------------------------------------
+# Detalles de recursos utilizados por el contaner "memory"
+# ---------------------------------------------------------
+
+docker container stats memory
+
+# -------------------------------------------
+# Levantar container con app que usa memoria
+# -------------------------------------------
+
+docker container run -ti -m 64m \
+    --name memory-2 \
+    mercadolibre/stress:latest \
+    --vm 1 --vm-bytes 128M
+
+# -------------------------------------------
+# Levantar container con cpu limitada
+# -------------------------------------------
+
+docker container run -ti --cpus 1 \
+    --name cpu \
+    mercadolibre/stress:latest \
+    --cpu 10
+
+# -------------------------------------------
+# Levantar otro container con cpu limitada
+# -------------------------------------------
+
+docker container run -ti --cpus 0.5 \
+    --name cpu-2 \
+    mercadolibre/stress:latest \
+    --cpu 10
+
+# -------------------------------------------
+# Levantar container con cpu fijada
+# -------------------------------------------
+
+docker container run -ti --cpuset-cpus 0-1 \
+    --name cpu-3 \
+    mercadolibre/stress:latest \
+    --cpu 10

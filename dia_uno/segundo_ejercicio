@@ -1,0 +1,13 @@
+# ----------------------------------
+# Levantar container con Debian
+# ----------------------------------
+
+docker container run -ti debian bash
+
+# ----------------------------------
+# Dentro del container
+# ----------------------------------
+
+cat /etc/os-release
+
+apt-get update && apt-get upgrade -y

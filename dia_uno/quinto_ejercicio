@@ -1,0 +1,86 @@
+# ----------------------------------
+# Levantar container con nginx
+# ----------------------------------
+
+docker container run -p 8080:80 \
+    -d \
+    mercadolibre/nginx-workshop \
+    nginx
+
+# ----------------------------------
+# Listar containers corriendo
+# ----------------------------------
+
+docker container ps
+
+# ----------------------------------
+# Listar todos los containers
+# ----------------------------------
+
+docker container ps -a
+
+# ---------------------------------------------
+# Levantar container con proceso en background
+# ---------------------------------------------
+
+docker container run -d \
+    mercadolibre/nginx-workshop \
+    bash -c "sleep infinity &"
+
+# -------------------------------------------
+# Levantar container con nginx en background
+# -------------------------------------------
+
+docker container run -p 8080:80 \
+    -d \
+    mercadolibre/nginx-workshop \
+    nginx -g "daemon off;"
+
+# ----------------------------------
+# Parar container
+# ----------------------------------
+
+docker container stop CONTAINER_ID/NAME
+
+# ----------------------------------
+# Matar container
+# ----------------------------------
+
+docker container kill CONTAINER_ID/NAME
+
+# ----------------------------------
+# Levantar container con nombre
+# ----------------------------------
+
+docker container run -p 8080:80 \
+    --name nginx \
+    -d \
+    mercadolibre/nginx-workshop \
+    nginx -g "daemon off;"
+
+# ----------------------------------
+# Copiar archivo
+# ----------------------------------
+
+docker container cp \
+    index.html nginx:/myhtmls/index.html
+
+# ----------------------------------
+# Levantar container con volumen
+# ----------------------------------
+
+docker container run -p 8080:80 -d \
+    --name nginx \
+    -v /home/workshop/html:/myhtmls \
+    mercadolibre/nginx-workshop nginx
+
+# ----------------------------------
+# Levantar container con mount
+# ----------------------------------
+
+docker container run -p 8080:80 -d \
+    --name nginx \
+    --mount "type=bind,\
+        source=/home/workshop/html,\
+        target=/myhtmls" \
+    mercadolibre/nginx-workshop nginx

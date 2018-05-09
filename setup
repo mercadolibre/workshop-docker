@@ -1,0 +1,14 @@
+# Setup
+
+##Mac
+https://download.docker.com/mac/stable/Docker.dmg
+
+##Windows 10
+https://download.docker.com/win/stable/Docker%20for%20Windows%20Installer.exe
+
+##Windos anterior
+https://download.docker.com/win/stable/DockerToolbox.exe
+
+##Linux
+curl -fsSL https://get.docker.com/ | sh
+

@@ -1,0 +1,11 @@
+# ------------------------------------------
+# Crea una imagen a partir de Dockerfile.base
+# ------------------------------------------
+
+docker image build -t USERNAME/nodejs:latest .
+
+# ------------------------------------------
+# Crea una segunda imagen a partir de Dockerfile.myapp
+# ------------------------------------------
+
+docker image build -t USERNAME/myapp:latest .

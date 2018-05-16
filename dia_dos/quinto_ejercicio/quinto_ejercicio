@@ -1,0 +1,29 @@
+# ------------------------------------------
+# Crea una imagen a partir de Dockerfile.1
+# ------------------------------------------
+
+docker image build -t myapp .
+
+# ------------------------------------------
+# Levantar un container
+# ------------------------------------------
+
+docker container run -p 8080:8080 -ti myapp
+
+# ------------------------------------------
+# Crea una imagen
+# ------------------------------------------
+
+docker image build -t USERNAME/IMAGE:TAG .
+
+# ------------------------------------------
+# Subo la imagen al registry publico
+# ------------------------------------------
+
+docker image push USERNAME/IMAGE:TAG
+
+# ------------------------------------------
+# Bajo la imagen del registry publico
+# ------------------------------------------
+
+docker image pull USERNAME/IMAGE:TAG

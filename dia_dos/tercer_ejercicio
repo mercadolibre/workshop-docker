@@ -1,0 +1,39 @@
+# ----------------------------------
+# Levantar container
+# ----------------------------------
+
+docker container run --name paso-1 debian apt-get update
+
+# ----------------------------------
+# Crear imagen
+# ----------------------------------
+
+docker container commit paso-1 paso-1
+
+# ----------------------------------
+# Levantar otro container
+# ----------------------------------
+
+docker container run --name paso-2 paso-1 apt-get install -y nginx curl
+
+# ----------------------------------
+# Crear otra imagen
+# ----------------------------------
+
+docker container commit paso-2 my-nginx
+
+# ----------------------------------
+# Ver historico
+# ----------------------------------
+
+docker image history my-nginx
+
+# ----------------------------------
+# Ver metadata de la imagen
+# ----------------------------------
+
+docker image inspect debian
+
+docker image inspect paso-1
+
+docker image inspect paso-2

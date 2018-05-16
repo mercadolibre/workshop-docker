@@ -1,0 +1,12 @@
+# ----------------------------------
+# Creo una imagen base
+# ----------------------------------
+
+docker image build -t mycapp-2 .
+
+# --------------------------------------
+# Creo otra imagen a partir de la base
+# --------------------------------------
+
+docker image ls -t mycapp-2 | grep mycapp
+

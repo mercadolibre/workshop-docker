@@ -1,0 +1,6 @@
+FROM USERNAME/nodejs:latest
+
+# Cri cri
+# Con tener un dockerfile que solamente extienda de del anterior ya funcionaria
+# Si fuese necesario podría hacer más cosas
+

@@ -1,0 +1,32 @@
+# ----------------------------------
+# Levanta un container
+# ----------------------------------
+
+docker container run -ti --name nginx my-nginx bash
+
+# ----------------------------------
+# Borrar un container
+# ----------------------------------
+
+docker container rm ID/NAME
+
+# ----------------------------------
+# Copiar archivo al container
+# ----------------------------------
+
+docker container cp index.html nginx:/myhtmls/index.html
+
+# ----------------------------------
+# Comparar cambios en mi container
+# ----------------------------------
+
+docker container diff ID/NAME
+
+# -----------------------------------------
+# Ver el historial de cambios en mi imagen
+# -----------------------------------------
+
+docker image history my-nginx
+
+
+

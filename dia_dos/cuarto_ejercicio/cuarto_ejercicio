@@ -1,0 +1,23 @@
+# -----------------------------------------------
+# Crea una imagen a partir de Dockerfile.sin_cmd
+# ----------------------------------------------
+
+docker image build -t myping .
+
+# ------------------------------------------
+# Levantar un container
+# ------------------------------------------
+
+docker container run -ti myping mercadolibre.com
+
+# -----------------------------------------------
+# Crea una imagen a partir de Dockerfile.con_cmd
+# -----------------------------------------------
+
+docker image build -t myping .
+
+# ------------------------------------------
+# Levantar un container
+# ------------------------------------------
+
+docker container run -ti myping

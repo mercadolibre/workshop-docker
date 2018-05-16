@@ -1,0 +1,37 @@
+# ----------------------------------
+# Levantar container con Debian
+# ----------------------------------
+
+docker container run -ti debian bash
+
+# ----------------------------------
+# Dentro del container
+# ----------------------------------
+
+apt-get update
+
+apt-get install -y nginx curl
+
+# ----------------------------------
+# En tu compu
+# ----------------------------------
+
+docker container ps
+
+# ----------------------------------
+# Crea una imagen
+# ----------------------------------
+
+docker container commit ID/NAME
+
+# ----------------------------------
+# Agrega un nombre a la imagen creada
+# ----------------------------------
+
+docker image tag ID my-nginx
+
+# ----------------------------------
+# Levanta un container
+# ----------------------------------
+
+docker container run -ti my-nginx bash

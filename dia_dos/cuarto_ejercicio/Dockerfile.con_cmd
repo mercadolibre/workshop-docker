@@ -1,0 +1,7 @@
+FROM debian:latest
+
+RUN apt-get update
+RUN apt-get install -y net-tools
+
+ENTRYPOINT ["/bin/ping"]
+CMD ["mercadolibre.com"]

@@ -1,0 +1,5 @@
+# ------------------------------------------
+# Crea una imagen a partir de Dockerfile
+# ------------------------------------------
+
+docker image build -t mycapp .

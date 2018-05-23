@@ -1,0 +1,7 @@
+docker container run --net=host -d \
+	--name redis \
+redis:alpine --appendonly yes
+
+docker container run --net=host -d \
+	-e REDIS_HOST=localhost
+mercadolibre/nodeapp-redis-workshop

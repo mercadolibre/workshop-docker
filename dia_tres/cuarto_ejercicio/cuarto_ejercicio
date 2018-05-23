@@ -1,0 +1,11 @@
+docker network create my-net
+
+docker container run --net=my-net -d \
+	--name redis \
+redis:alpine --appendonly yes
+
+docker container run --net=my-net -d \
+	-p 5000:5000 \
+	--name redis-app \
+	-e REDIS_HOST=redis \
+mercadolibre/nodeapp-redis-workshop

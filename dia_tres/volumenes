@@ -1,0 +1,41 @@
+docker container run -p 8080:80 -d \
+	--name nginx \
+	--mount "type=bind,\
+source=/home/workshop/html,\
+target=/myhtmls" \
+mercadolibre/nginx-workshop nginx
+
+docker container run -p 8080:80 -d \
+	--name nginx \
+	--mount "type=tmpfs,\
+source=/home/workshop/html,\
+target=/myhtmls,
+tmpfs-size=2G" \
+mercadolibre/nginx-workshop nginx
+
+docker volume create NAME
+
+docker volume create test
+
+docker container run -p 8080:80 -d \
+	--name nginx \
+	--mount "type=volume,\
+source=test,\
+target=/myhtmls" \
+mercadolibre/nginx-workshop nginx
+
+docker volume inspect test
+
+docker volume create \
+	--driver local
+	-o type=tmpfs
+	-o device=tmpfs
+	-o o=size=2G
+test
+
+docker volume create \
+	--driver local
+	-o type=nfs
+	-o device=:/path
+	-o o=addr=192.168.1.1,rw
+test

@@ -1,0 +1,5 @@
+docker-compose up -d
+
+docker-compose restart myapp
+
+docker-compose down

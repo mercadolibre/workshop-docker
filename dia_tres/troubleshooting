@@ -1,0 +1,16 @@
+docker container run \
+   -d debian bash -c \
+'for i in {1..100}; do echo "$i" ; done'
+
+docker logs ID
+
+
+docker container run \
+--log-driver syslog
+--log-opts syslog-address [udp|tcp]://host:port
+   -d debian bash -c \
+'for i in {1..100}; do echo "$i" ; done'
+
+docker info
+
+systemctl status docker

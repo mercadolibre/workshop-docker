@@ -1,0 +1,17 @@
+version: '3'
+services:
+    web:
+        container_name: myapp
+        image: mercadolibre/nodeapp-redis-workshop
+        ports:
+            - "5000:5000"
+        environment:
+            REDIS_HOST: redis
+        depends_on:
+             - redis
+
+    redis:
+        image: redis:alpine
+        command: --appendonly yes
+        volumes:
+            - ./data:/data

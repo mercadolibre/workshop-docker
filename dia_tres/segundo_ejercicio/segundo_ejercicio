@@ -1,0 +1,12 @@
+docker container run -d \
+	--name redis \
+redis:alpine --appendonly yes
+
+docker volume create redis_data
+
+docker container run -p 6380:6380 -d \
+	--name redis \
+	--mount "type=volume,\
+source=test,\
+target=/data" \
+redis:alpine --appendonly yes

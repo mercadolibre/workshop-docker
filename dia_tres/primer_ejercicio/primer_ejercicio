@@ -1,0 +1,19 @@
+docker container run -p 5000:5000 -d \
+	--name app \
+mercadolibre/nodeapp-workshop
+
+
+docker container run -d \
+	--name redis \
+redis:alpine --appendonly yes
+
+
+docker container inspect redis
+
+docker volume inspect ID
+
+docker container run -p 5000:5000 -d \
+	-e REDIS_HOST=IP_ADDRESS
+mercadolibre/nodeapp-redis-workshop
+
+docker container restart redis redis-app
